@@ -1,0 +1,11 @@
+elkai @ git+https://github.com/chenyu-jiang/elkai.git@blkh
+numpy
+prtpy
+pybind11
+pytest
+redis
+scikit-learn>=1.2.0
+scipy
+setuptools
+sortedcontainers
+tqdm
