@@ -3,7 +3,7 @@
 
 ## Optimizing Multi-task Training through Dynamic Pipelines
 
-Official repository for the paper *DynaPipe: Optimizing Multi-task Training through Dynamic Pipelines* (camera-ready link pending).
+Official repository for the paper *DynaPipe: Optimizing Multi-task Training through Dynamic Pipelines* ([Paper](https://arxiv.org/abs/2311.10418)).
 
 During multi-task training, the model commonly receives input sequences of highly different lengths due to the diverse contexts of different tasks. Padding (to the same sequence length) or packing (short examples into long sequences of the same length) is usually adopted to prepare input samples for model training, which is nonetheless not space or computation efficient. This project adopts a dynamic micro-batching approach to tackle sequence length variation. Each input global batch is split into multiple variable-length micro-batches, each of which comprises a (potentially different) number of samples of similar sequence lengths. These micro-batches are efficiently organized into pipelines, facilitating efficient 3D-parallel (data, tensor and pipeline) multi-task model training.
 
@@ -23,6 +23,8 @@ Main features of this project include:
 ### Dependencies
 #### Redis
 The distributed instruction store uses Redis as the underlying key-value store. [Redis server](https://redis.io/) needs to be installed on machines participating in training. Our code will setup and initialize a Redis server automatically.
+
+*Note*: The Redis server is not protected by authentication and may pose security risks. Please make sure that the code is only run in a secure environment.
 
 #### Python Dependencies
 Please see [requirements.txt](requirements.txt) for the required Python packages. Install them by running
